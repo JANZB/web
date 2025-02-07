@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Rose Day</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            overflow: hidden;
+            position: relative;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        #title {
+            font-size: 50px;
+            font-weight: bold;
+            color: #d63384;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        #rose {
+            width: 120px;
+            height: 120px;
+            transition: transform 2s ease-in-out, opacity 1.5s;
+            opacity: 1;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        .bloom {
+            transform: scale(3);
+        }
+        #message {
+            font-size: 30px;
+            color: #fff;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 2s, transform 1s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        .show-message {
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 20px;
+            background: linear-gradient(45deg, #ff4b5c, #ff6384);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 75, 92, 0.3);
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #ff6384, #ff4b5c);
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 75, 92, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="https://media.istockphoto.com/id/466713353/video/falling-rose-petals.mp4?s=mp4-640x640-is&k=20&c=9j7cnb_IBC_ubRuLrF1gPVhyBb1I5PvRNpIXNFX38Bg=" type="video/mp4">
+    </video>
+    
+    <p id="title">Happy Rose Day</p>
+    <button onclick="bloomRose()">Click to Bloom</button>
+    <br><br>
+    <img id="rose" src="https://c4.wallpaperflare.com/wallpaper/719/492/1009/pink-rose-flower-black-background-wallpaper-preview.jpg" alt="Rose">
+    <p id="message">Wishing you love and happiness!</p>
+
+    <script>
+        function bloomRose() {
+            document.getElementById('rose').classList.add('bloom');
+            document.getElementById('message').classList.add('show-message');
+        }
+    </script>
+</body>
+</html>
